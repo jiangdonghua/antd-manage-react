@@ -209,6 +209,14 @@ module.exports = {
                     },
                       {
                           loader:require.resolve('less-loader'),
+                          options:{
+                              modifyVars:{
+                                  'primary-color': '#313653',
+                                  // 'link-color': '#1DA57A',
+                                  // 'border-radius-base': '2px',
+                              },
+                              javascriptEnabled: true,
+                          }
                       }
                   ],
                 },

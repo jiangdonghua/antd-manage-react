@@ -193,7 +193,7 @@ module.exports = {
                                 loader:require.resolve('less-loader'),
                                 options:{
                                     modifyVars:{
-                                       'primary-color': '#f9c700',
+                                       '@primary-color': '#313653',
                                         // 'link-color': '#1DA57A',
                                         // 'border-radius-base': '2px',
                                     },

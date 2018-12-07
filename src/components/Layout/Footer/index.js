@@ -1,13 +1,13 @@
 import React,{Component} from 'react';
-import {Row} from 'antd';
-
-class Footer extends Component{
+import {Layout} from 'antd';
+const {Footer}=Layout;
+class mFooter extends Component{
     render() {
         return (
-            <Row>
-               footer
-            </Row>
+            <Footer style={{ textAlign: 'center' }}>
+                React-Admin-manager ©{new Date().getFullYear()} Created by 861252878@qq.com
+            </Footer>
         )
     }
 }
-export default Footer;
+export default mFooter;

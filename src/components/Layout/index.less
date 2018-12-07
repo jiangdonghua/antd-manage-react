@@ -7,34 +7,120 @@
     visibility: hidden;
   }
 }
-.container{
-  .nav-left{
-    background-color:#001529;
-    color: #ffffff;
-    height: calc(100vh);
-  }
-  .main{
-    height: calc(100vh);
-    background-color: @colorL;
-    overflow: auto;
-  }
-  .content{
-    position: relative;
-    padding: 20px;
-  }
-}
 
-.content-wrap{
-  background: #ffffff;
-  border: 1px solid #e8e8e8;
-  margin-top: -3px;
-  .ant-table-wrapper{
-    margin-left: -1px;
-    margin-right: -2px;
+.ant-layout{
+  height: 100%;
+ //侧边样式更改
+  .ant-layout-sider{
+    flex: 0 0 220px!important;
+    max-width: 220px!important;
+    min-width: 220px!important;
+    width: 220px!important;
+    background: @primary-color;
+    &.ant-layout-sider-collapsed{
+      flex: 0 0 80px!important;
+      max-width: 80px!important;
+      min-width: 80px!important;
+      width: 80px!important;
+    }
+    .logo{
+      position: relative;
+      height: 32px;
+      padding: 20px;
+      //margin: 8px 0;
+      margin-bottom: 8px;
+      box-sizing: content-box;
+      box-shadow: 0 2px 8px rgba(255,255,255,0.3) inset;
+      a{
+        display: block;
+      }
+      img{
+        height: 32px;
+      }
+      .svg-logo{
+        position: absolute;
+        width: 120px;
+        margin-left: 10px;
+      }
+    }
+    .ant-menu-dark{
+      background: @primary-color;
+      .ant-menu-item-selected{
+        background-color: #8b8e94;
+      }
+       .ant-menu-inline.ant-menu-sub{
+         background: @primary-color;
+         box-shadow: 0 1px 8px rgba(0, 0, 0, 0.45) inset;
+       }
+    }
   }
-}
-.ant-card{
-  button{
-    margin-right: 10px;
+  //右部header样式更改
+  .header{
+    padding: 0;
+    padding-right: 40px;
+    background: @primary-color;
+    height: 72px;
+    .header__trigger{
+      color: #fff;
+    }
+    .ant-menu {
+      background: transparent;
+      color: #ffffff;
+    }
+
+    .ant-menu-item-active{
+      color:rgba(255,255,255,0.6);
+      //border-bottom:2px solid rgba(255,255,255,0.36);
+    }
+    .ant-menu-horizontal > .ant-menu-item-selected{
+      color:rgba(255,255,255,0.6);
+    }
+    .ant-menu-dark{
+      background: @primary-color;
+    }
+    .custom-trigger{
+      font-size: 18px;
+      line-height: 73px;
+      padding: 0 16px;
+      cursor: pointer;
+      transition: color .3s;
+    }
+    .avatar {
+      position: relative;
+      display: inline-block;
+      width: 46px;
+      line-height: 1;
+      border-radius: 500px;
+      white-space: nowrap;
+      font-weight: bold;
+      top: -3px;
+      img{
+        border-radius: 500px;
+        width: 100%;
+      }
+      .b-white {
+        border-color: #ffffff;
+      }
+       i {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        margin: 1px;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 100%;
+         &.bottom {
+           left: auto;
+           top: auto;
+           bottom: 0;
+           right: 0;
+         }
+         &.on {
+           background-color: #6cc788;
+         }
+      }
+    }
   }
 }
