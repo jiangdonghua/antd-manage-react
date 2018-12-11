@@ -19,12 +19,19 @@ class NormalLoginForm extends Component {
             }
         });
     }
+    //第三方登录待完成
+    gitHub=()=>{
+        window.location.href='https://github.com/login/oauth/authorize?client_id=Iv1.948e8fbade4c5ce2&redirect_uri=http://localhost:2019/&scope=user&state=reactAdmin';
+    }
     componentDidUpdate(nextProps){
         const {history,userInfo,location}=this.props;
-        if(userInfo.Token&&userInfo.role){
-            sessionStorage.setItem('userInfo',userInfo);
-            sessionStorage.setItem('Token',userInfo.Token);
-            let RedirectUrl=location.state?'/':'/app/home';
+        // console.log(this.props)
+        if(userInfo.token&&userInfo.role){
+            const checkedIdStr=JSON.stringify(userInfo)
+            sessionStorage.setItem('userInfo',checkedIdStr);
+            // sessionStorage.setItem('Token',userInfo.token);
+            let RedirectUrl=location.state?'/':'/app/home/index';
+            // debugger;
             history.push(RedirectUrl);
         }
 

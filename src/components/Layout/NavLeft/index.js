@@ -55,13 +55,12 @@ class NavLeft extends Component {
         }
     }
     menuClick = e => {
-        console.log('click ', e);
         this.setState({
             selectedKey: e.key
         })
     }
     openMenu = v => {
-        console.log(v)
+
         this.setState({
             openKey: v[v.length - 1],
             firstHide: false,
@@ -73,7 +72,9 @@ class NavLeft extends Component {
             <Fragment>
                 <Sider trigger={null}
                        breakpoint='lg'
-                       collapsed={this.props.collapsed}>
+                       collapsed={this.props.collapsed}
+                       style={{ overflowY: 'auto' }}
+                >
                     <div className="logo">
                         <Link id="logo" to="/index">
                             <img alt="logo" src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" title='admin'/>

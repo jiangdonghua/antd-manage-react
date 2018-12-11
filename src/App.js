@@ -12,7 +12,7 @@ class App extends Component{
             <Provider store={store}>
                 <Router>
                     <Switch>
-                        <Route exact path="/" render={() => <Redirect to="/app/home" push />} />
+                        <Route exact path="/" render={() => <Redirect to="/app/home/index" push />} />
                         <Route path="/app" component={Page} />
                         <Route path="/404" component={NotFound} />
                         <Route path="/login" component={Login} />

@@ -3,24 +3,34 @@ import {Route,Switch,Redirect,withRouter} from "react-router-dom";
 import AllComponents from '../pages';
 import routesConfig from './config';
 import {connect} from 'react-redux';
-
 import queryString from 'query-string';
-
 
 class CRouter extends Component{
     // requireAuth=()=>{  //鉴权待完成
     //
     // }
-    state={
-        login:true
-    }
+    // requireAuth = (permission, component) => {
+    //     const { auth } = this.props;
+    //
+    //     const { permissions } = auth.data;
+    //     // const { auth } = store.getState().httpData;
+    //     if (!permissions || !permissions.includes(permission)) return <Redirect to={'404'} />;
+    //     return component;
+    // };
     requireLogin=(component,permission)=>{
-        console.log(this.props)
-        const {userInfo}=this.props;
-        if(permission){}
-        return component
+
+        // const {userInfo}=this.props;
+        // const { auth } = this.props;
+        // const { permissions } = auth.data;
+        // if (process.env.NODE_ENV === 'production' && !permissions) { // 线上环境判断是否登录
+        //     return <Redirect to={'/login'} />;
+        // }
+        // return permission ? this.requireAuth(permission, component) : component;
+         return <Redirect to={'/login'} />
     }
     render() {
+         const {userInfo}=this.props;
+        //console.log(userInfo.token)
         return (
             <Switch>
                 {
@@ -28,7 +38,6 @@ class CRouter extends Component{
                         routesConfig[key].map(r => {
                             const route = r => {
                                 const Component = AllComponents[r.component];
-
                                 return (
                                     <Route
                                         key={r.route || r.key}
@@ -46,7 +55,8 @@ class CRouter extends Component{
                                             });
                                             props.match.params = { ...params };
                                             const merge = { ...props, query: queryParams ? queryString.parse(queryParams[0]) : {} };
-                                            return this.state.login ? <Component {...merge} /> : this.requireLogin(<Component {...merge} />)
+                                            return userInfo.token ? <Component {...merge} /> : this.requireLogin(<Component {...merge} />)
+                                            // this.requireLogin(<Component {...merge} />, r.auth)
                                         }}
                                     />
                                 )
@@ -63,9 +73,9 @@ class CRouter extends Component{
 
 }
 // redux拿到token并挂载到App的props上面
+//state.getIn(['login','userInfo']) 如用immutable
 const mapState=state=>({
     userInfo:state.getIn(['login','userInfo'])
 });
-
 
 export default withRouter(connect(mapState,null)(CRouter));

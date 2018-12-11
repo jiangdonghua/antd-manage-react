@@ -8,15 +8,18 @@
   }
 }
 
-.ant-layout{
+.ant-layout,.ant-popover{
   height: 100%;
  //侧边样式更改
   .ant-layout-sider{
-    flex: 0 0 220px!important;
-    max-width: 220px!important;
-    min-width: 220px!important;
-    width: 220px!important;
+    flex: 0 0 212px!important;
+    max-width: 212px!important;
+    min-width: 212px!important;
+    width: 212px!important;
     background: @primary-color;
+    .ant-layout-sider-children>.ant-menu-inline{
+      padding-bottom: 20px;
+    }
     &.ant-layout-sider-collapsed{
       flex: 0 0 80px!important;
       max-width: 80px!important;
@@ -122,5 +125,11 @@
          }
       }
     }
+  }
+}
+//卡片logo
+.ant-popover-inner-content{
+  .logo{
+    display: none;
   }
 }
