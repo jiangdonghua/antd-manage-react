@@ -7,13 +7,24 @@ import SiderMenu from './SiderMenu';
 const {Sider} = Layout;
 
 class NavLeft extends Component {
+    state = {
+        openKey: '',
+        selectedKey: '',
+        mode: 'inline',
+        firstHide: false, // 点击收缩菜单，第一次隐藏展开子菜单，openMenu时恢复
+        theme: 'dark',
+        collapsed: false,
+    }
     //替换componentWillReceiveProps
     static getDerivedStateFromProps(props, state) {
+        // console.log('props');
         // console.log(props);
-       // console.log(props.collapsed !== state.collapsed)
+        // console.log('state');
+        // console.log(state);
         if (props.collapsed !== state.collapsed) {
             const state1 = NavLeft.setMenuOpen(props);
             const state2 = NavLeft.onCollapse(props.collapsed);
+            console.log(props.collapsed !== state.collapsed)
             return {
                 ...state1,
                 ...state2,
@@ -31,36 +42,28 @@ class NavLeft extends Component {
             mode: collapsed ? 'vertical' : 'inline',
         };
     };
-    state = {
-        openKey: '',
-        selectedKey: '',
-        mode: 'inline',
-        firstHide: true, // 点击收缩菜单，第一次隐藏展开子菜单，openMenu时恢复
-        theme: 'dark',
-        collapsed: false,
-    }
-
     componentDidMount() {
         // withRouter带来的props
         const state = NavLeft.setMenuOpen(this.props);
-        this.setState(state);
+        setTimeout(() => {
+            this.setState(state);
+        }, 0)
     }
-
-
     static setMenuOpen = props => {
         const {pathname} = props.location;
+        // console.log(pathname)
         return {
             openKey: pathname.substr(0, pathname.lastIndexOf('/')),
-            selectedKey: pathname
+            selectedKey: pathname,
         }
     }
     menuClick = e => {
-        this.setState({
-            selectedKey: e.key
-        })
+        //首页之类没有children,不是由SubMenu组成的菜单，单独处理
+        let firstHide;
+        e.keyPath.length===1? firstHide=true:firstHide=false;
+        this.setState({selectedKey: e.key,firstHide:firstHide});
     }
     openMenu = v => {
-
         this.setState({
             openKey: v[v.length - 1],
             firstHide: false,
@@ -91,6 +94,8 @@ class NavLeft extends Component {
                         selectedKeys={[this.state.selectedKey]}
                         openKeys={this.state.firstHide ? null : [this.state.openKey]}
                         onOpenChange={this.openMenu}
+                        defaultOpenKeys={[this.state.openKey]}
+                        defaultSelectedKeys={[this.state.selectedKey]}
                     />
                 </Sider>
             </Fragment>

@@ -39,6 +39,11 @@ const Tabs=loadable(Object.assign(defaultLoadable, { loader:()=>import('./ui/tab
 const Wysiwyg=loadable(Object.assign(defaultLoadable, { loader:()=>import('./ui/wysiwyg')
 }));
 
+const BasicAnimations=loadable(Object.assign(defaultLoadable, { loader:()=>import('./animation/basic')
+}));
+const ExampleAnimations=loadable(Object.assign(defaultLoadable, { loader:()=>import('./animation/example')
+}));
+
 export default {
-    Home,Icons,Banners,Buttons,Draggable,Emoji,Gallery,Map,Modals,Notifications,Spins,Tabs,Wysiwyg
+    Home,Icons,Banners,Buttons,Draggable,Emoji,Gallery,Map,Modals,Notifications,Spins,Tabs,Wysiwyg,BasicAnimations,ExampleAnimations,
 }
