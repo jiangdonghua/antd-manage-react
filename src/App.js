@@ -5,6 +5,10 @@ import {Provider} from 'react-redux';
 import Login from './pages/login';
 import NotFound from './pages/notFound';
 import Page from './Page';
+import "./styles/index.less";
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+moment.locale('zh-cn');
 class App extends Component{
 
     render() {

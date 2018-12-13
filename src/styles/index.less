@@ -1,10 +1,37 @@
-@import 'default';
-@import "loading";
+@import "./module/variables";
+@import "./module/global";
+@import "./module/scroll";
+@import "./module/table";
+@import "./module/icons";
+@import "./module/button";
+@import "./module/modal";
+@import "./module/menu";
+@import "./module/banner";
+@import "./module/card";
+@import "./module/img";
+@import "./module/utils-text";
+@import "./module/utils-color";
+@import "./module/utils-size";
+@import "./module/utils-border";
+@import "./module/utils-spacing";
+@import "./module/loading";
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
 #root{
   height: 100%;
 }
-
+//美化webkit内核滚动条
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #313653;
+}
 @font-face {
   font-family: 'iconfont';  /* project id 929101 */
   src: url('//at.alicdn.com/t/font_929101_5ddveult0u.eot');
@@ -12,4 +39,45 @@
   url('//at.alicdn.com/t/font_929101_5ddveult0u.woff') format('woff'),
   url('//at.alicdn.com/t/font_929101_5ddveult0u.ttf') format('truetype'),
   url('//at.alicdn.com/t/font_929101_5ddveult0u.svg#iconfont') format('svg');
+}
+
+.ant-layout{
+  height: 100%;
+  .ant-layout-sider-collapsed{
+    .anticon{
+      font-size: 16px;
+      // margin-left: 8px;
+    }
+    .nav-text{
+      display: none;
+    }
+    .ant-menu-submenu-vertical > .ant-menu-submenu-title:after{
+      display: none;
+    }
+    .ant-menu-dark:not(.ant-menu-inline) .ant-menu-submenu-open {
+      color: inherit;
+    }
+  }
+  p {
+    margin: 10px 0 10px 0;
+  }
+}
+.gutter-example{
+  .ant-row{
+    //margin-left: 0 !important;
+    //margin-right: 0 !important;
+    >div{
+      background: transparent;
+      border: 0;
+    }
+  }
+}
+.gutter-box {
+  padding: 5px 0;
+}
+
+:global {
+  .ant-card-head-title {
+    font-size: 14px !important;
+  }
 }
