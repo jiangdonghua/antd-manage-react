@@ -24,9 +24,9 @@ class Location extends Component {
             if(result.name){
                 weather(this.state.city).then(res=>{
                     if(res.status==='success'){
-                        console.log(res)
+                        // console.log(res)
                         let data=res.results[0].weather_data[0];
-                        console.log(moment().hour())
+                        // console.log(moment().hour())
                         let PictureUrl= Number(24)>Number(moment().hour())>Number(18)?data.nightPictureUrl:data.dayPictureUrl;
                         this.setState({
                             dayPictureUrl:PictureUrl,

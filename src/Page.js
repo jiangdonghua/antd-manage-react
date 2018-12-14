@@ -42,8 +42,8 @@ const {Content}=Layout;
                     <MHeader toggle={this.toggle} collapsed={this.state.collapsed}/>
                     <Content style={{ margin: '0 16px', overflow: 'initial', flex: '1 1 0' }}>
                         <Routes/>
+                        <MFooter/>
                     </Content>
-                    <MFooter/>
                 </Layout>
             </Layout>
         )

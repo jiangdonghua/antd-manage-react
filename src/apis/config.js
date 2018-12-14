@@ -19,3 +19,6 @@ export const LOGOUT = MOCK_AUTH + '/logout';
 //天气
 
 export const WEATHER=WEATHER_URL;
+
+// 获取更新记录
+export const GET_UPDATE_RECORDS=MOCK_AUTH + '/updateRecords';

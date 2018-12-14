@@ -1,3 +1,17 @@
 .ant-timeline-item{
   padding-bottom: 10px;
 }
+.spin{
+  animation: rotateIcon 0.2s infinite;
+  transition: all 0.2s ease-in;
+  transform-origin: center center;
+
+}
+
+@keyframes rotateIcon
+{
+  from {
+    transform: rotate(0);
+  }
+  to {transform: rotate(360deg);}
+}
