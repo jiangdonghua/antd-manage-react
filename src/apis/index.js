@@ -17,6 +17,7 @@ export const weather=(city)=>(jsonp(config.WEATHER,{
 
 export const updateRecords=()=>(get(config.GET_UPDATE_RECORDS));
 
+export const fetch_chart_data=()=>(get(config.FETCH_CHART_DATA));
 
 
 

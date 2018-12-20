@@ -1,36 +1,70 @@
-import React, {Component} from 'react';
-import {Row, Col, Card, Timeline, Icon} from 'antd';
+import React, {Component, Suspense} from 'react';
+import {Row, Col, Card, Timeline, Icon, Menu, Dropdown, Table} from 'antd';
+import {connect} from 'react-redux';
+import {actionCreators} from './store';
+
 import BreadcrumbCustom from '../../components/BreadCrumb';
 import EchartsProjects from './components/EchartsPro';
 // import Calendar from './components/calendar';
-import {updateRecords} from '../../apis';
 import moment from 'moment';
+import {updateRecords} from '../../apis';
 import './index.less';
+import Trend from "../../components/Trend";
+
+const TopSearch = React.lazy(() => import('./components/TopSearch'));
+const columns = [
+    {
+        title: 'Rank',
+        dataIndex: 'index',
+        key: 'index'
+    },
+    {
+        title: 'Search keyword',
+        dataIndex: 'keyword',
+        key: 'keyword',
+        render: text => <a href="/">{text}</a>
+    },
+    {
+        title: 'Users',
+        dataIndex: 'count',
+        key: 'count',
+        sorter: (a, b) => a.count - b.count,
+        className: 'right'
+    },
+    {
+        title: 'Weekly',
+        dataIndex: 'range',
+        key: 'range',
+        sorter: (a, b) => a.range - b.range,
+        render: (text, record) => (
+            <Trend flag={record.status === 1 ? 'down' : 'up'}>
+                <span style={{marginRight: 4}}>{text}%</span>
+            </Trend>
+        ),
+        align: 'right'
+    }
+]
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
-        this.sync = React.createRef();
-    }
-
-    //相对时间
-    relativeDate = (historyDate) => (
-        //相对时间
-        moment(historyDate, "YYYYMMDDhhmmss").fromNow()
-    )
     state = {
         updateRecord: [],
-        loaded: true
+        loaded: true,
     }
+    //相对时间
+    relativeDate = (historyDate) => (
+        moment(historyDate, "YYYYMMDDhhmmss").fromNow()
+    )
+
+    // 格式化时间
     format = (data) => {
         if (data) {
             const historyDate = moment().format(data, 'YYYYMMDDhhmmss').toString();
             const fromNow = this.relativeDate(historyDate);
             return fromNow
         }
-
     }
 
+    //获取更新记录
     getUpdateRecords() {
         if (this.state.updateRecord.length) {
             return this.state.updateRecord.map((item) => {
@@ -45,13 +79,18 @@ class Home extends Component {
                         </a></p>
                     })}
                 </Timeline.Item>
-
             })
         }
     }
 
     componentWillMount() {
+        //cancelAnimationFrame(this.reqRef);
+        this.props.fetch_chart_data();
+    }
+
+    componentDidMount() {
         this.updateRecords();
+
     }
 
     updateRecords() {
@@ -65,6 +104,7 @@ class Home extends Component {
         })
     }
 
+//手动刷新更新纪录
     handleUpdateRecord = () => {
         // let spinIcon=document.getElementById('spinIcon');
         // let originAngle=spinIcon.style.transform.replace(/[^0-9]/ig,'');
@@ -80,7 +120,36 @@ class Home extends Component {
         this.updateRecords();
     }
 
+    selectDate = type => {
+    }
+
     render() {
+        const {chart, loading} = this.props;
+
+        const {
+            visitData,
+            visitData2,
+            salesData,
+            searchData,
+            offlineData,
+            offlineChartData,
+            salesTypeData,
+            salesTypeDataOnline,
+            salesTypeDataOffline,
+        } = chart.toJS();
+        const menu = (
+            <Menu>
+                <Menu.Item>操作一</Menu.Item>
+                <Menu.Item>操作二</Menu.Item>
+            </Menu>
+        );
+        const dropdownGroup = (
+            <span>
+        <Dropdown overlay={menu} placement="bottomRight">
+          <Icon type="ellipsis"/>
+        </Dropdown>
+      </span>
+        );
         return (
             <div className='gutter-example button-demo'>
                 <BreadcrumbCustom/>
@@ -175,10 +244,20 @@ class Home extends Component {
                             </Card>
                         </div>
                     </Col>
-                    <Col className="gutter-row" md={8}>
-
+                    <Col className="gutter-row" md={12}>
+                        <div className="gutter-box">
+                            <Suspense fallback={null}>
+                                <TopSearch
+                                    loading={loading}
+                                    visitData2={visitData2}
+                                    selectDate={this.selectDate}
+                                    searchData={searchData}
+                                    dropdownGroup={dropdownGroup}
+                                />
+                            </Suspense>
+                        </div>
                     </Col>
-                    <Col className="gutter-row" md={8}>
+                    <Col className="gutter-row" md={4}>
                         222
                     </Col>
                 </Row>
@@ -187,4 +266,14 @@ class Home extends Component {
     }
 }
 
-export default Home;
+const mapState = state => ({
+    chart: state.getIn(['home', 'chart']),
+    loading: state.getIn(['home', 'loading']),
+});
+const mapDispatch = (dispatch) => ({
+    fetch_chart_data() {
+        dispatch(actionCreators.Fetch_chart_data())
+    }
+});
+
+export default connect(mapState, mapDispatch)(Home);

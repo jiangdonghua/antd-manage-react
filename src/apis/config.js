@@ -22,3 +22,6 @@ export const WEATHER=WEATHER_URL;
 
 // 获取更新记录
 export const GET_UPDATE_RECORDS=MOCK_AUTH + '/updateRecords';
+
+//获取图表数据
+export const FETCH_CHART_DATA=MOCK_AUTH + '/fetch_chart_data';
