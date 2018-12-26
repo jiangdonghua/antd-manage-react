@@ -26,11 +26,11 @@ class CRouter extends Component{
         //     return <Redirect to={'/login'} />;
         // }
         // return permission ? this.requireAuth(permission, component) : component;
+        console.log('去登陆')
          return <Redirect to={'/login'} />
     }
     render() {
          const {userInfo}=this.props;
-        //console.log(userInfo.token)
         return (
             <Switch>
                 {
@@ -55,7 +55,7 @@ class CRouter extends Component{
                                             });
                                             props.match.params = { ...params };
                                             const merge = { ...props, query: queryParams ? queryString.parse(queryParams[0]) : {} };
-                                            return userInfo.token ? <Component {...merge} /> : this.requireLogin(<Component {...merge} />)
+                                            return  userInfo.token ? <Component {...merge} /> : this.requireLogin(<Component {...merge} />)
                                             // this.requireLogin(<Component {...merge} />, r.auth)
                                         }}
                                     />

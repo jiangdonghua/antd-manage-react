@@ -65,7 +65,7 @@ class Pie extends Component {
       origin.checked = true;
       return origin;
     });
-
+console.log(legendData)
     this.setState({
       legendData,
     });

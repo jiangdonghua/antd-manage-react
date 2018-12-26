@@ -1,54 +1,23 @@
 import React, {Component, Suspense} from 'react';
-import {Row, Col, Card, Timeline, Icon, Menu, Dropdown, Table} from 'antd';
+import {Row, Col, Card, Timeline, Icon, Menu, Dropdown} from 'antd';
 import {connect} from 'react-redux';
+import moment from 'moment';
 import {actionCreators} from './store';
+import {updateRecords} from '../../apis';
+import './index.less';
 
 import BreadcrumbCustom from '../../components/BreadCrumb';
 import EchartsProjects from './components/EchartsPro';
-// import Calendar from './components/calendar';
-import moment from 'moment';
-import {updateRecords} from '../../apis';
-import './index.less';
-import Trend from "../../components/Trend";
 
 const TopSearch = React.lazy(() => import('./components/TopSearch'));
-const columns = [
-    {
-        title: 'Rank',
-        dataIndex: 'index',
-        key: 'index'
-    },
-    {
-        title: 'Search keyword',
-        dataIndex: 'keyword',
-        key: 'keyword',
-        render: text => <a href="/">{text}</a>
-    },
-    {
-        title: 'Users',
-        dataIndex: 'count',
-        key: 'count',
-        sorter: (a, b) => a.count - b.count,
-        className: 'right'
-    },
-    {
-        title: 'Weekly',
-        dataIndex: 'range',
-        key: 'range',
-        sorter: (a, b) => a.range - b.range,
-        render: (text, record) => (
-            <Trend flag={record.status === 1 ? 'down' : 'up'}>
-                <span style={{marginRight: 4}}>{text}%</span>
-            </Trend>
-        ),
-        align: 'right'
-    }
-]
-
+const CategoryChart = React.lazy(() => import('./components/categoryChart'));
+const OfflineData = React.lazy(() => import('./components/offlineData'));
 class Home extends Component {
     state = {
         updateRecord: [],
         loaded: true,
+        currentTabKey:'',
+        salesType: 'all',
     }
     //相对时间
     relativeDate = (historyDate) => (
@@ -85,10 +54,11 @@ class Home extends Component {
 
     componentWillMount() {
         //cancelAnimationFrame(this.reqRef);
-        this.props.fetch_chart_data();
+            this.props.fetch_chart_data();
     }
 
     componentDidMount() {
+        //这个最好也放进store方法同fetch_chart_data
         this.updateRecords();
 
     }
@@ -119,11 +89,23 @@ class Home extends Component {
         })
         this.updateRecords();
     }
-
+    //销售额类别占比切换
+    handleChangeSalesType=(e)=>{
+        this.setState({
+            salesType:e.target.value
+        })
+    }
+    //转化率
+    handleTabChange=(key)=>{
+        this.setState({
+            currentTabKey:key
+        })
+    }
     selectDate = type => {
     }
 
     render() {
+        const {salesType,currentTabKey}=this.state;
         const {chart, loading} = this.props;
 
         const {
@@ -137,6 +119,13 @@ class Home extends Component {
             salesTypeDataOnline,
             salesTypeDataOffline,
         } = chart.toJS();
+        let salesPieData;
+
+        if(salesType==='all'){
+            salesPieData=salesTypeData;
+        }else{
+            salesPieData=salesType==='online'?salesTypeDataOnline:salesTypeDataOffline
+        }
         const menu = (
             <Menu>
                 <Menu.Item>操作一</Menu.Item>
@@ -145,11 +134,12 @@ class Home extends Component {
         );
         const dropdownGroup = (
             <span>
-        <Dropdown overlay={menu} placement="bottomRight">
-          <Icon type="ellipsis"/>
-        </Dropdown>
-      </span>
+                <Dropdown overlay={menu} placement="bottomRight">
+                  <Icon type="ellipsis"/>
+                </Dropdown>
+          </span>
         );
+        const activeKey =offlineData? currentTabKey || (offlineData[0] && offlineData[0].name):currentTabKey;
         return (
             <div className='gutter-example button-demo'>
                 <BreadcrumbCustom/>
@@ -238,13 +228,15 @@ class Home extends Component {
                                   extra={<a onClick={this.handleUpdateRecord} ref='spinLink'><Icon type="sync"
                                                                                                    id='spinIcon'
                                                                                                    className={this.state.loaded ? '' : 'spin'}/></a>}>
+
                                 <Timeline>
+                                    <Timeline.Item> 10个已经完成，2个待完成，1个正在进行中</Timeline.Item>
                                     {this.getUpdateRecords()}
                                 </Timeline>
                             </Card>
                         </div>
                     </Col>
-                    <Col className="gutter-row" md={12}>
+                    <Col className="gutter-row" md={8}>
                         <div className="gutter-box">
                             <Suspense fallback={null}>
                                 <TopSearch
@@ -257,10 +249,32 @@ class Home extends Component {
                             </Suspense>
                         </div>
                     </Col>
-                    <Col className="gutter-row" md={4}>
-                        222
+                    <Col className="gutter-row" md={8}>
+                        <div className="gutter-box">
+                            <Suspense fallback={null}>
+                                <CategoryChart
+                                    loading={loading}
+                                    dropdownGroup={dropdownGroup}
+                                    salesType={salesType}
+                                    salesPieData={salesPieData}
+                                    handleChangeSalesType={this.handleChangeSalesType}
+                                />
+                            </Suspense>
+                        </div>
                     </Col>
                 </Row>
+                <Suspense fallback={null}>
+                    {
+                        offlineData?<OfflineData
+                            activeKey={activeKey}
+                            loading={loading}
+                            offlineData={offlineData}
+                            offlineChartData={offlineChartData}
+                            handleTabChange={this.handleTabChange}
+                        />:null
+                    }
+
+                </Suspense>
             </div>
         );
     }

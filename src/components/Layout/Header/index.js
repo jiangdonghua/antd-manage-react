@@ -5,6 +5,7 @@ import {PwaInstaller} from '../../widget';
 import {connect} from "react-redux";
 import * as actionCreators from "../../../pages/login/store/actionCreators";
 import NavLeft from '../NavLeft'
+import {Redirect} from "react-router-dom";
 const {Header}=Layout;
 const SubMenu=Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
@@ -38,6 +39,15 @@ class MHeader extends Component{
         sessionStorage.removeItem("userInfo");
         this.props.logout('admin')
     }
+    requireLogin=()=>{
+        return <Redirect to={'/login'} />
+    }
+    componentWillMount() {
+        if(!this.props.userInfo){
+            this.requireLogin()
+        }
+    }
+
     componentDidMount() {
         // const userInfo=JSON.parse(sessionStorage.getItem('userInfo'));
         //判断是否页面有被人为刷新，将导致redux store清空，需要从缓存中恢复store
@@ -54,10 +64,12 @@ class MHeader extends Component{
         // this.setState({
         //     user:userInfo
         // })
+
     }
 
     render() {
         const {userInfo,path}=this.props;
+
         return (
             <Header className='custom-theme header'>
                 {
@@ -90,17 +102,29 @@ class MHeader extends Component{
                         <Badge count={25} overflowCount={10} style={{marginLeft:10}}>
                         <Icon type="notification" /></Badge>
                     </Menu.Item>
-                    <SubMenu title={<span className="avatar"><img src={userInfo.role==='admin'?'../../images/gaga.gif':userInfo.avatar} alt="头像"/> <i className="on bottom b-white" /></span>}>
-                        <MenuItemGroup title="用户中心">
-                            <Menu.Item key="setting:1">你好 - {userInfo.cname}</Menu.Item>
-                            <Menu.Item key="setting:2"><Icon type="user" />个人信息</Menu.Item>
-                            <Menu.Item key="logout"><span onClick={this.logout}><Icon type="logout" />退出登录</span></Menu.Item>
-                        </MenuItemGroup>
-                        <MenuItemGroup title="设置中心">
-                            <Menu.Item key="setting:3"><Icon type="setting" />个人设置</Menu.Item>
-                            <Menu.Item key="setting:4"><Icon type="setting" />系统设置</Menu.Item>
-                        </MenuItemGroup>
-                    </SubMenu>
+                    {
+                        userInfo?<SubMenu title={<span className="avatar"><img src={userInfo&&userInfo.role==='admin'?'../../images/gaga.gif':userInfo.avatar} alt="头像"/> <i className="on bottom b-white" /></span>}>
+                            <MenuItemGroup title="用户中心">
+                                <Menu.Item key="setting:1">你好 - {userInfo.cname}</Menu.Item>
+                                <Menu.Item key="setting:2"><Icon type="user" />个人信息</Menu.Item>
+                                <Menu.Item key="logout"><span onClick={this.logout}><Icon type="logout" />退出登录</span></Menu.Item>
+                            </MenuItemGroup>
+                            <MenuItemGroup title="设置中心">
+                                <Menu.Item key="setting:3"><Icon type="setting" />个人设置</Menu.Item>
+                                <Menu.Item key="setting:4"><Icon type="setting" />系统设置</Menu.Item>
+                            </MenuItemGroup>
+                        </SubMenu>:<SubMenu title={<span className="avatar"><img src="../../images/gaga.gif" alt="头像"/> <i className="on bottom b-white" /></span>}>
+                            <MenuItemGroup title="用户中心">
+                                <Menu.Item key="setting:1">你好 - 游客}</Menu.Item>
+                                <Menu.Item key="setting:2"><Icon type="user" />个人信息</Menu.Item>
+                            </MenuItemGroup>
+                            <MenuItemGroup title="设置中心">
+                                <Menu.Item key="setting:3"><Icon type="setting" />个人设置</Menu.Item>
+                                <Menu.Item key="setting:4"><Icon type="setting" />系统设置</Menu.Item>
+                            </MenuItemGroup>
+                        </SubMenu>
+                    }
+
                 </Menu>
             </Header>
         )

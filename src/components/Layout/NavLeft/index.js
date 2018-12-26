@@ -45,10 +45,15 @@ class NavLeft extends Component {
     componentDidMount() {
         // withRouter带来的props
         const state = NavLeft.setMenuOpen(this.props);
-        setTimeout(() => {
+        this.timer = setTimeout(() => {
             this.setState(state);
         }, 0)
     }
+    //解决报错
+    componentWillUnmount() {
+            clearTimeout(this.timer)
+    }
+
     static setMenuOpen = props => {
         const {pathname} = props.location;
         // console.log(pathname)

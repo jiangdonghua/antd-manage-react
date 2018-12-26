@@ -70,9 +70,9 @@ class MiniArea extends React.PureComponent {
         data.map((item)=>{
             xData.push(item.x);
             SeriesData.push(item.y);
-            return xData,SeriesData
+            return xData ,SeriesData;
         })
-
+        //return 返回多个值最好用数组或者对象包裹，这里懒得改了
         this.setState({
             option:this.getOption(xData,SeriesData)
         })
@@ -80,8 +80,7 @@ class MiniArea extends React.PureComponent {
     render() {
 
         const {
-
-            line,height
+            height
         } = this.props;
         return (
             <ReactEcharts option={this.state.option}  style={{height: height+10, width: '100%'}} notMerge={true} lazyUpdate={true} className={'react_for_echarts'}/>

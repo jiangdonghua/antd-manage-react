@@ -24,9 +24,10 @@ class NormalLoginForm extends Component {
         window.location.href='https://github.com/login/oauth/authorize?client_id=Iv1.948e8fbade4c5ce2&redirect_uri=http://localhost:2019/&scope=user&state=reactAdmin';
     }
     componentDidUpdate(nextProps){
+        console.log('update')
         const {history,userInfo,location}=this.props;
         // console.log(this.props)
-        if(userInfo.token&&userInfo.role){
+        if(userInfo&&userInfo.token&&userInfo.role){
             const checkedIdStr=JSON.stringify(userInfo)
             sessionStorage.setItem('userInfo',checkedIdStr);
             // sessionStorage.setItem('Token',userInfo.token);
