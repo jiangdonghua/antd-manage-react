@@ -55,15 +55,13 @@ class MiniArea extends React.PureComponent {
                 }
             },
             series: [{
-                data:obj.SeriesData,
-                type: 'line',
+                data: obj.SeriesData,
+                type: 'bar',
                 smooth: true,
                 showSymbol: false,
-                areaStyle: {
-                    origin:'start',
-                    color : 'rgba(24, 144, 255, 0.2)',
-                    //borderColor : '#1089ff',
-                },
+                barWidth:8,
+                barGap:'80%',/*多个并排柱子设置柱子之间的间距*/
+                barCategoryGap:'50%',/*多个并排柱子设置柱子之间的间距*/
                 itemStyle : {
                     normal : {
                         color:'#1089ff',

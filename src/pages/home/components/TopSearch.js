@@ -53,10 +53,10 @@ const TopSearch=({loading,visitData2,dropdownGroup,searchData})=>(
           title={"线上热门搜索"}
           extra={dropdownGroup}
     >
-        <Row gutter={68}>
-            <Col sm={12} xs={24} style={{marginBottom:24}}>
-                <NumberInfo
 
+        <Row gutter={68}>
+            <Col sm={12} xs={24} style={{marginBottom:14}}>
+                <NumberInfo
                 subTitle={
                     <span>
                         搜索用户数
@@ -70,11 +70,10 @@ const TopSearch=({loading,visitData2,dropdownGroup,searchData})=>(
                 subTotal={18.6}
                 status='up'
                 />
-                <MiniArea line height={55} data={visitData2} />
+                <MiniArea line height={65} data={visitData2} />
             </Col>
-            <Col sm={12} xs={24} style={{marginBottom:24}}>
+            <Col sm={12} xs={24} style={{marginBottom:14}}>
                 <NumberInfo
-
                     subTitle={
                         <span>
                            人均搜索次数
@@ -88,7 +87,7 @@ const TopSearch=({loading,visitData2,dropdownGroup,searchData})=>(
                     status="down"
                     subTotal={28.6}
                 />
-                <MiniArea line height={55} data={visitData2} />
+                <MiniArea line height={65} data={visitData2} />
             </Col>
         </Row>
         <Table

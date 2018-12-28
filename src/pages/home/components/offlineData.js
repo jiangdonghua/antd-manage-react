@@ -27,14 +27,13 @@ const OfflineData=({activeKey, loading, offlineData, offlineChartData, handleTab
         loading={loading}
         className="offlineCard"
         bordered={false}
-        style={{ marginTop: 32 }}
     >
         <Tabs activeKey={activeKey} onChange={handleTabChange}>
             {
                 offlineData.map(item=>(
 
                     <TabPane tab={<CustomTab currentTabKey={activeKey} data={item}/>} key={item.name}>
-                        <div style={{ padding: '0 24px' }}>
+                        <div style={{ padding: '0 24px',maxWidth:800,margin:'0 auto' }}>
                             <TimelineChart data={offlineChartData}/>
                         </div>
                     </TabPane>

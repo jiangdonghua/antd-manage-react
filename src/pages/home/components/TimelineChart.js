@@ -120,7 +120,7 @@ class TimelineChart extends PureComponent {
         }
     }
     setOption(data){
-        console.log(data)
+        //console.log(data)
         let obj={
             xAxisData:[],
             seriesData1:[],
@@ -140,7 +140,7 @@ class TimelineChart extends PureComponent {
             obj.max=Math.max.apply(null, maxData)+10;
             return obj;
         })
-        console.log(obj)
+       // console.log(obj)
         this.setState({
             option:this.getOption(obj)
         })
@@ -156,7 +156,7 @@ class TimelineChart extends PureComponent {
             // because of charts data create when rendered
             // so there is a trick for get rendered time
             //this.getLegendData();
-            //this.setOption(data)
+            this.setOption(data)
         }
     }
 

@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {weather} from '../../apis/index'
 import moment from 'moment'
 import BMap from 'BMap';
-class Location extends Component {
+class Location extends PureComponent {
     state = {
         city: '北京'
     }
     componentWillMount(){
-        setInterval(()=>{
+       this.timer= setInterval(()=>{
             let sysTime=moment().format('YYYY-MM-DD HH:mm:ss');
             this.setState({
                 sysTime
@@ -15,6 +15,10 @@ class Location extends Component {
         },1000)
         this.getWeatherAPIData();
     }
+    componentWillUnmount() {
+        clearInterval(this.timer);
+    }
+
     getWeatherAPIData(){
         //ip定位 单纯获取城市速度最快
         let myFun=(result)=>{

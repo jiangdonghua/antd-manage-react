@@ -3,14 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="fcb7dd91-80b5-48c8-8a64-1dd34c6152c9" name="默认" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Charts/Pie/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Charts/Pie/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/Header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Header/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/NavLeft/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/NavLeft/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BreadCrumb/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BreadCrumb/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BreadCrumb/location.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BreadCrumb/location.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Trend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Trend/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/home/components/MiniArea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/components/MiniArea.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/components/PieChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/components/PieChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/components/TimelineChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/components/TimelineChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/components/TopSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/components/TopSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/components/offlineData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/components/offlineData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/home/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,50 +25,50 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7386781">
+    <splitter split-orientation="horizontal" split-proportion="0.58200735">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/pages/home/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-616">
-                  <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+                <state relative-caret-position="154">
+                  <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
                   <folding>
-                    <element signature="e#0#49#0" expanded="true" />
+                    <element signature="n#!!block;n#getUpdateRecords#0;n#Home#0" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/pages/home/components/MiniArea.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="66">
+                  <caret line="57" column="36" lean-forward="true" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/pages/home/components/MiniBar.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="396">
+                  <caret line="83" column="23" lean-forward="true" selection-start-line="81" selection-start-column="12" selection-end-line="83" selection-end-column="23" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/pages/home/components/offlineData.js">
+            <entry file="file://$PROJECT_DIR$/src/pages/home/components/PieChart.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="484">
-                  <caret line="31" column="61" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="61" />
-                  <folding>
-                    <element signature="e#0#36#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/pages/home/components/TimelineChart.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3190">
-                  <caret line="145" column="10" lean-forward="true" selection-start-line="145" selection-start-column="10" selection-end-line="145" selection-end-column="10" />
+                <state relative-caret-position="-2398">
+                  <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
                   <folding>
                     <element signature="e#0#45#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/pages/home/components/PieChart.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="308">
-                  <caret line="81" column="36" lean-forward="true" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
                 </state>
               </provider>
             </entry>
@@ -74,11 +77,32 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/Charts/ChartCard/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="440">
+                  <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/Charts/ChartCard/index.less">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1606">
+                  <caret line="73" column="1" lean-forward="true" selection-start-line="2" selection-end-line="73" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/pages/home/index.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="687">
-                  <caret line="112" column="21" selection-start-line="112" selection-start-column="21" selection-end-line="112" selection-end-column="21" />
+                <state relative-caret-position="198">
+                  <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
                 </state>
               </provider>
             </entry>
@@ -115,6 +139,11 @@
       <find>Redirect</find>
       <find>role</find>
       <find>offlineData</find>
+      <find>numeral</find>
+      <find>rangePickerValue</find>
+      <find>echarts</find>
+      <find>loading</find>
+      <find>SeriesData</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;title&quot;</replace>
@@ -127,20 +156,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/Layout/store/reducer.js" />
-        <option value="$PROJECT_DIR$/src/pages/animation/Basic.js" />
-        <option value="$PROJECT_DIR$/src/pages/animation/Example.js" />
-        <option value="$PROJECT_DIR$/src/pages/index.js" />
-        <option value="$PROJECT_DIR$/src/components/Layout/NavLeft/SiderMenu.js" />
-        <option value="$PROJECT_DIR$/src/pages/animation/example.js" />
-        <option value="$PROJECT_DIR$/src/pages/animation/basic.js" />
         <option value="$PROJECT_DIR$/src/pages/home/components/EchartsViews.js" />
         <option value="$PROJECT_DIR$/src/styles/default.less" />
         <option value="$PROJECT_DIR$/src/styles/module/variables.less" />
         <option value="$PROJECT_DIR$/src/styles/module/index.less" />
         <option value="$PROJECT_DIR$/src/styles/module/loading.less" />
         <option value="$PROJECT_DIR$/src/styles/module/login.less" />
-        <option value="$PROJECT_DIR$/src/styles/index.less" />
         <option value="$PROJECT_DIR$/src/pages/home/components/EchartsPro.js" />
         <option value="$PROJECT_DIR$/src/components/Layout/index.less" />
         <option value="$PROJECT_DIR$/src/App.js" />
@@ -149,9 +170,7 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/util/map.js" />
         <option value="$PROJECT_DIR$/src/apis/tools.js" />
-        <option value="$PROJECT_DIR$/src/components/BreadCrumb/index.js" />
         <option value="$PROJECT_DIR$/src/components/BreadCrumb/index.less" />
-        <option value="$PROJECT_DIR$/src/components/BreadCrumb/location.js" />
         <option value="$PROJECT_DIR$/src/apis/config.js" />
         <option value="$PROJECT_DIR$/src/apis/index.js" />
         <option value="$PROJECT_DIR$/src/pages/home/store/constants.js" />
@@ -161,10 +180,6 @@
         <option value="$PROJECT_DIR$/src/components/NumberInfo/index.less" />
         <option value="$PROJECT_DIR$/src/components/NumberInfo/index.js" />
         <option value="$PROJECT_DIR$/src/components/Trend/index.less" />
-        <option value="$PROJECT_DIR$/src/components/Trend/index.js" />
-        <option value="$PROJECT_DIR$/src/pages/home/components/TopSearch.js" />
-        <option value="$PROJECT_DIR$/src/pages/home/index.less" />
-        <option value="$PROJECT_DIR$/src/util/index.js" />
         <option value="$PROJECT_DIR$/src/util/yuan.js" />
         <option value="$PROJECT_DIR$/src/components/Charts/Pie/index.js" />
         <option value="$PROJECT_DIR$/src/pages/home/components/categoryChart.js" />
@@ -172,12 +187,26 @@
         <option value="$PROJECT_DIR$/src/components/Layout/Header/index.js" />
         <option value="$PROJECT_DIR$/src/components/Layout/NavLeft/index.js" />
         <option value="$PROJECT_DIR$/src/Page.js" />
-        <option value="$PROJECT_DIR$/src/pages/home/components/PieChart.js" />
-        <option value="$PROJECT_DIR$/src/pages/home/components/MiniArea.js" />
         <option value="$PROJECT_DIR$/src/routes/index.js" />
-        <option value="$PROJECT_DIR$/src/pages/home/components/offlineData.js" />
+        <option value="$PROJECT_DIR$/src/util/getTimeDistance.js" />
+        <option value="$PROJECT_DIR$/src/pages/home/components/BarChart.js" />
+        <option value="$PROJECT_DIR$/src/util/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/home/components/salesCard.js" />
+        <option value="$PROJECT_DIR$/src/pages/home/components/ChartCard.js" />
+        <option value="$PROJECT_DIR$/src/components/Trend/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/home/components/MiniProgress.js" />
         <option value="$PROJECT_DIR$/src/pages/home/components/TimelineChart.js" />
+        <option value="$PROJECT_DIR$/src/pages/home/components/IntroduceRow.js" />
+        <option value="$PROJECT_DIR$/src/pages/home/components/offlineData.js" />
+        <option value="$PROJECT_DIR$/src/styles/index.less" />
+        <option value="$PROJECT_DIR$/src/pages/home/index.less" />
+        <option value="$PROJECT_DIR$/src/pages/home/components/TopSearch.js" />
         <option value="$PROJECT_DIR$/src/pages/home/index.js" />
+        <option value="$PROJECT_DIR$/src/components/BreadCrumb/index.js" />
+        <option value="$PROJECT_DIR$/src/components/BreadCrumb/location.js" />
+        <option value="$PROJECT_DIR$/src/pages/home/components/MiniBar.js" />
+        <option value="$PROJECT_DIR$/src/pages/home/components/MiniArea.js" />
+        <option value="$PROJECT_DIR$/src/pages/home/components/PieChart.js" />
       </list>
     </option>
   </component>
@@ -231,15 +260,7 @@
               <item name="react-antd-manager" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Charts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-antd-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-antd-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Charts" type="462c0819:PsiDirectoryNode" />
-              <item name="TimelineChart" type="462c0819:PsiDirectoryNode" />
+              <item name="BreadCrumb" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-antd-manager" type="b2602c69:ProjectViewProjectNode" />
@@ -261,6 +282,14 @@
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-antd-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-antd-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-antd-manager" type="b2602c69:ProjectViewProjectNode" />
@@ -289,6 +318,18 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="store" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="react-antd-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-antd-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-antd-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-antd-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -307,19 +348,19 @@
     <property name="ts.external.directory.path" value="D:\WebStorm 2018.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\React-js\react-antd-manager\src\pages\home" />
-      <recent name="D:\React-js\react-antd-manager\src\components" />
-      <recent name="D:\React-js\react-antd-manager\src\components\NumberInfo" />
-      <recent name="D:\React-js\react-antd-manager\src\pages\home\components" />
-      <recent name="D:\React-js\react-antd-manager\public\images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\React-js\react-antd-manager\src\styles\module" />
       <recent name="D:\React-js\react-antd-manager\src" />
       <recent name="D:\React-js\react-antd-manager\src\components" />
       <recent name="D:\React-js\react-antd-manager\src\components\LoadingPage" />
       <recent name="D:\React-js\react-antd-manager\src\common\styles" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\React-js\react-antd-manager\src\pages\home\components" />
+      <recent name="D:\React-js\react-antd-manager\src\pages\home" />
+      <recent name="D:\React-js\react-antd-manager\src\components" />
+      <recent name="D:\React-js\react-antd-manager\src\components\NumberInfo" />
+      <recent name="D:\React-js\react-antd-manager\public\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -384,12 +425,12 @@
       <workItem from="1543458312242" duration="35533000" />
       <workItem from="1543801403966" duration="23474000" />
       <workItem from="1543888322539" duration="295504000" />
-      <workItem from="1545787220489" duration="19021000" />
+      <workItem from="1545787220489" duration="56078000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="439275000" />
+    <option name="totallyTimeSpent" value="476332000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1936" height="1096" extended-state="6" />
@@ -441,153 +482,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="45" column="23" lean-forward="true" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Trend/index.d.ts" />
-    <entry file="file://$PROJECT_DIR$/src/components/Trend/index.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Trend/demo/reverse.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/NumberInfo/demo/basic.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-200" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/NumberInfo/index.zh-CN.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Trend/demo/basic.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Charts/Bar/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/apis/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="26" column="62" selection-start-line="26" selection-start-column="62" selection-end-line="26" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/apis/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="62" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
-          <folding>
-            <element signature="e#2#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Charts/MiniBar/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/store/constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/store/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/reducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/store/reducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/store/actionCreators.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Trend/index.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Trend/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="98" selection-start-line="4" selection-start-column="98" selection-end-line="4" selection-end-column="98" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/NumberInfo/index.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="40" column="28" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Charts/index.less">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Charts/autoHeight.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-792">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Charts/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-498">
@@ -611,23 +505,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3201">
           <caret line="1" column="43" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/components/EchartsPro.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="119" column="35" lean-forward="true" selection-start-line="119" selection-start-column="35" selection-end-line="119" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -658,13 +535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/index.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="687">
-          <caret line="112" column="21" selection-start-line="112" selection-start-column="21" selection-end-line="112" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Layout/NavLeft/SiderMenu.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -675,37 +545,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/yuan.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" selection-start-line="1" selection-end-line="3" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/components/TopSearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-696">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/components/categoryChart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -787,16 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/components/MiniArea.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="71" column="36" lean-forward="true" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="704">
@@ -817,39 +650,283 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/components/PieChart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="81" column="36" lean-forward="true" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/util/getTimeDistance.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/index.js">
+    <entry file="file://$PROJECT_DIR$/src/util/yuan.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-616">
-          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+        <state relative-caret-position="352">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
-            <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/components/TimelineChart.js">
+    <entry file="file://$PROJECT_DIR$/src/pages/home/components/EchartsViews.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/components/EchartsPro.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3190">
-          <caret line="145" column="10" lean-forward="true" selection-start-line="145" selection-start-column="10" selection-end-line="145" selection-end-column="10" />
+        <state relative-caret-position="2618">
+          <caret line="119" column="35" lean-forward="true" selection-start-line="119" selection-start-column="35" selection-end-line="119" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/components/categoryChart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/components/calendar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/store/actionCreators.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/store/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/store/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/store/reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/components/salesCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/components/BarChart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="121" column="95" selection-start-line="121" selection-start-column="95" selection-end-line="121" selection-end-column="95" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/components/offlineData.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Charts/Field/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="31" column="61" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="61" />
+        <state relative-caret-position="44">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Charts/ChartCard/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1606">
+          <caret line="73" column="1" lean-forward="true" selection-start-line="2" selection-end-line="73" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Charts/ChartCard/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Trend/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Trend/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/components/MiniProgress.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/components/TimelineChart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="163" column="98" selection-start-line="163" selection-start-column="98" selection-end-line="163" selection-end-column="98" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/components/ChartCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="28" column="17" lean-forward="true" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/components/IntroduceRow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/components/offlineData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1300">
+          <caret line="74" selection-start-line="74" selection-end-line="76" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/components/TopSearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="45" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/BreadCrumb/index.less">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/BreadCrumb/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/BreadCrumb/location.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!block;n#getUpdateRecords#0;n#Home#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/components/MiniBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="83" column="23" lean-forward="true" selection-start-line="81" selection-start-column="12" selection-end-line="83" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/components/MiniArea.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="57" column="36" lean-forward="true" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/components/PieChart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2398">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -9,7 +9,7 @@ class Pie extends PureComponent {
         option:option,
         legendData:[]
     };
-    getOption(SeriesData,total,legendData){
+    getOption(obj,total){
         return {
             tooltip: {
                 trigger: 'item',
@@ -17,17 +17,17 @@ class Pie extends PureComponent {
             },
             legend: {
                 orient: 'horizontal',
-                data: legendData,
+                data: obj.legendData,
                 left:'center',
                 bottom:'0',
                 formatter: function(name) {
                     var index = 0;
-                    legendData.forEach(function(value,i){
+                    obj.legendData.forEach(function(value,i){
                         if(value.name === name){
                             index = i;
                         }
                     });
-                    return name + " | " + legendData[index].value +"  "+legendData[index].percent;
+                    return name + " | " + obj.legendData[index].value +"  "+obj.legendData[index].percent;
                 }
             },
             graphic:{
@@ -79,7 +79,7 @@ class Pie extends PureComponent {
                         }
                     },
 
-                    data:SeriesData,
+                    data:obj.SeriesData,
                     color:['rgb(24, 144, 255)',
                         'rgb(19, 194, 194)',
                         'rgb(47, 194, 91)',
@@ -96,9 +96,14 @@ class Pie extends PureComponent {
         }
     }
     setOption(data,total){
-        let SeriesDataItem={}, SeriesData=[],legendData=[],legendDataItem={};
+        let SeriesDataItem={},legendDataItem={},
+        obj={
+            legendData:[],
+            SeriesData:[],
+            Total:0
+        };
         let Total=(typeof total === 'function' ? total() : total).substring(2).replace(",","")
-
+obj.Total=Total;
         data.map((item,key)=>{
             SeriesDataItem[key]={
                 value:item.y,
@@ -113,13 +118,13 @@ class Pie extends PureComponent {
                     borderRadius:3
                 }
             }
-            legendData.push(legendDataItem[key])
-            SeriesData.push(SeriesDataItem[key])
-            return SeriesData,legendData;
+            obj.legendData.push(legendDataItem[key])
+            obj.SeriesData.push(SeriesDataItem[key])
+            return obj;
         })
 
         this.setState({
-            option:this.getOption(SeriesData,total,legendData)
+            option:this.getOption(obj)
         })
     }
     componentDidMount() {

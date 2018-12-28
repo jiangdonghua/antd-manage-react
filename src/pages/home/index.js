@@ -1,7 +1,8 @@
 import React, {Component, Suspense} from 'react';
-import {Row, Col, Card, Timeline, Icon, Menu, Dropdown} from 'antd';
+import {Row, Col, Card, Timeline, Icon, Menu, Dropdown, Spin} from 'antd';
 import {connect} from 'react-redux';
 import moment from 'moment';
+import {getTimeDistance} from '../../util'
 import {actionCreators} from './store';
 import {updateRecords} from '../../apis';
 import './index.less';
@@ -12,12 +13,16 @@ import EchartsProjects from './components/EchartsPro';
 const TopSearch = React.lazy(() => import('./components/TopSearch'));
 const CategoryChart = React.lazy(() => import('./components/categoryChart'));
 const OfflineData = React.lazy(() => import('./components/offlineData'));
+const SalesCard = React.lazy(() => import('./components/salesCard'));
+const IntroduceRow = React.lazy(() => import('./components/IntroduceRow'));
+
 class Home extends Component {
     state = {
         updateRecord: [],
         loaded: true,
         currentTabKey:'',
         salesType: 'all',
+        rangePickerValue:getTimeDistance('year')
     }
     //相对时间
     relativeDate = (historyDate) => (
@@ -32,6 +37,36 @@ class Home extends Component {
             return fromNow
         }
     }
+//激活的日期
+    isActive=type=>{
+        const {rangePickerValue}=this.state;
+
+        const value = getTimeDistance(type);
+        if (!rangePickerValue[0] || !rangePickerValue[1]) {
+            return '';
+        }
+        if (
+            rangePickerValue[0].isSame(value[0], 'day') &&
+            rangePickerValue[1].isSame(value[1], 'day')
+        ) {
+            return 'currentDate';
+        }
+        return '';
+    }
+    //日期改变
+    handleRangePickerChange=rangePickerValue=>{
+        this.setState({
+            rangePickerValue
+        })
+        //fetchSalesData操作
+    }
+    selectDate = type => {
+        this.setState({
+            rangePickerValue: getTimeDistance(type),
+        });
+
+        //fetchSalesData操作
+    };
 
     //获取更新记录
     getUpdateRecords() {
@@ -60,7 +95,6 @@ class Home extends Component {
     componentDidMount() {
         //这个最好也放进store方法同fetch_chart_data
         this.updateRecords();
-
     }
 
     updateRecords() {
@@ -101,13 +135,11 @@ class Home extends Component {
             currentTabKey:key
         })
     }
-    selectDate = type => {
-    }
+
 
     render() {
-        const {salesType,currentTabKey}=this.state;
+        const {salesType,currentTabKey,rangePickerValue}=this.state;
         const {chart, loading} = this.props;
-
         const {
             visitData,
             visitData2,
@@ -237,8 +269,11 @@ class Home extends Component {
                         </div>
                     </Col>
                     <Col className="gutter-row" md={8}>
+
                         <div className="gutter-box">
-                            <Suspense fallback={null}>
+
+                            <Suspense fallback={<div style={{ paddingTop: 100, textAlign: 'center' }}> <Spin size="large" />
+                            </div>}>
                                 <TopSearch
                                     loading={loading}
                                     visitData2={visitData2}
@@ -246,6 +281,7 @@ class Home extends Component {
                                     searchData={searchData}
                                     dropdownGroup={dropdownGroup}
                                 />
+
                             </Suspense>
                         </div>
                     </Col>
@@ -263,18 +299,52 @@ class Home extends Component {
                         </div>
                     </Col>
                 </Row>
-                <Suspense fallback={null}>
+                <Row>
+                    <Col className="gutter-row">
+                        <div className="gutter-box1">
+                    <Suspense fallback={<div style={{ paddingTop: 100, textAlign: 'center' }}> <Spin size="large" />
+                    </div>}>
+                        <IntroduceRow loading={loading} visitData={visitData} />
+                    </Suspense>
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className="gutter-row">
+                        <div className="gutter-box1">
+                    <Suspense fallback={<Spin size="large" />}>
+                        {
+                            offlineData?<OfflineData
+                                activeKey={activeKey}
+                                loading={loading}
+                                offlineData={offlineData}
+                                offlineChartData={offlineChartData}
+                                handleTabChange={this.handleTabChange}
+                            />:null
+                        }
+
+                    </Suspense>
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className="gutter-row">
+                        <div className="gutter-box1">
+                <Suspense fallback={<Spin size="large" />}>
                     {
-                        offlineData?<OfflineData
-                            activeKey={activeKey}
+                        salesData?<SalesCard
+                            rangePickerValue={rangePickerValue}
+                            salesData={salesData}
+                            isActive={this.isActive}
+                            handleRangePickerChange={this.handleRangePickerChange}
                             loading={loading}
-                            offlineData={offlineData}
-                            offlineChartData={offlineChartData}
-                            handleTabChange={this.handleTabChange}
+                            selectDate={this.selectDate}
                         />:null
                     }
 
-                </Suspense>
+                </Suspense></div>
+                    </Col>
+                </Row>
             </div>
         );
     }
